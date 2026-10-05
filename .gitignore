@@ -4,6 +4,7 @@ __pycache__/
 .idea/
 .vscode/
 *.pt
+!examples/6jhe_A/core_inference_fixture.pt
 *.pth
 *.tar.gz
 data/
