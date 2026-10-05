@@ -2,7 +2,7 @@
   "schema": "0921_rimbind_code_freeze_v1",
   "freeze_date": "2026-09-21",
   "canonical_experiment": "0916-RIMBind-Decisive-MVP",
-  "canonical_path": "/home/ys/xuning/MyProject/0921-RIMBind-code/checkout/0916-RIMBind-Decisive-MVP",
+  "canonical_path": "private server path omitted; use the public release commit and this lock file",
   "structure_source": "ColabFold AlphaFold2 predicted monomer",
   "colabfold_parameters": {
     "model_type": "alphafold2_ptm",
@@ -15,6 +15,13 @@
   },
   "full_predicted_structures": 409,
   "label_free_inputs": 409,
+  "complete_historical_evaluation_update": {
+    "added_full_length_DNA181_queries": 18,
+    "total_historical_external_queries": 427,
+    "DNA181_total": 181,
+    "structure_source": "ColabFold/AlphaFold2 predicted monomer rank_001",
+    "protocol_note": "legacy 1022-residue prefilter removed for the 18 full-length queries; no experimental-chain substitution"
+  },
   "c0_outputs": {
     "dna": 292,
     "rna": 117

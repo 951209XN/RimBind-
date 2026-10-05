@@ -134,6 +134,7 @@ def main() -> None:
     parser.add_argument("--domain", choices=["dna", "rna"], required=True)
     parser.add_argument("--scope", choices=["smoke", "full"], required=True)
     parser.add_argument("--memory-only", action="store_true")
+    parser.add_argument("--memory-pdb-root", required=True, help="Directory containing dna/ and rna/ training-memory PDB folders")
     args = parser.parse_args()
     root = Path(args.root).resolve()
     assets = json.loads((root / "audit/MODEL_ASSETS_FROZEN.json").read_text(encoding="utf-8"))
@@ -161,7 +162,7 @@ def main() -> None:
         if not link.exists():
             os.symlink(source, link)
 
-    target_source = Path("/home/ys/xuning/MyProject/0814-BayesRIM-FrozenExternalConfirmation/data/memory_pdb") / args.domain
+    target_source = Path(args.memory_pdb_root).expanduser().resolve() / args.domain
     db_root = root / "runs/foldseek/db"
     target_db = db_root / "memory" / args.domain
     query_db = db_root / "query" / args.scope / args.domain

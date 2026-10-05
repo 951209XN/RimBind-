@@ -62,6 +62,7 @@ def main() -> None:
     parser.add_argument("--device", required=True)
     parser.add_argument("--scope", choices=["smoke", "full"], required=True)
     parser.add_argument("--domain", choices=["dna", "rna"])
+    parser.add_argument("--saprot-model", help="Local SaProt_650M_AF2 directory; required for --kind saprot")
     args = parser.parse_args()
     root = Path(args.root).resolve()
     assets = json.loads((root / "audit/MODEL_ASSETS_FROZEN.json").read_text(encoding="utf-8"))
@@ -72,7 +73,10 @@ def main() -> None:
 
     if args.kind == "saprot":
         from transformers import EsmModel, EsmTokenizer
-        model_path = Path("/home/ys/hdarray/xuning/models/SaProt_650M_AF2")
+        model_setting = args.saprot_model or os.environ.get("SAPROT_MODEL_DIR")
+        if not model_setting:
+            raise RuntimeError("provide --saprot-model or set SAPROT_MODEL_DIR")
+        model_path = Path(model_setting).expanduser().resolve()
         tokenizer = EsmTokenizer.from_pretrained(model_path, local_files_only=True)
         model = EsmModel.from_pretrained(model_path, local_files_only=True).to(device).eval()
     else:

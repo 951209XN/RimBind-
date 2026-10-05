@@ -1,7 +1,7 @@
 {
   "schema": "0916_rimbind_decisive_mvp_v1",
   "created_date": "2026-09-16",
-  "workspace": "/home/ys/xuning/MyProject",
+  "workspace": ".",
   "datasets": {
     "DNA-129_Test": {"domain": "dna", "expected_proteins": 129, "raw_manifest": "rawdata/DNA/DNA-129_Test.txt"},
     "DNA-181_Test": {"domain": "dna", "expected_proteins": 181, "raw_manifest": "rawdata/DNA/DNA-181_Test.txt"},
@@ -14,8 +14,8 @@
     "rna_prospective": "0903-RIMBind-RNA-Prospective-CR-Confirmation"
   },
   "colabfold": {
-    "binary": "/home/ys/xuning/MyProject/localcolabfold/localcolabfold/colabfold-conda/bin/colabfold_batch",
-    "data": "/home/ys/xuning/MyProject/localcolabfold/localcolabfold/colabfold",
+    "binary": "colabfold_batch",
+    "data": "${COLABFOLD_DATA_DIR}",
     "model_type": "alphafold2_ptm",
     "msa_mode": "mmseqs2_uniref_env",
     "num_models": 1,
@@ -25,8 +25,11 @@
     "relax": false
   },
   "predicted_monomer": {
-    "max_residues": 1022,
-    "exclusion_rule": "Exclude sequences longer than 1022 residues before structure prediction; report counts by dataset and do not replace them post hoc."
+    "historical_prefilter_max_residues": 1022,
+    "historical_prefilter_status": "superseded for complete DNA-181 reporting",
+    "complete_dna181_protocol": "all 181 predicted monomers, including 18 full-length sequences above the legacy prefilter; no experimental-chain substitution and no chunked final inference",
+    "current_reported_dna181_proteins": 181,
+    "current_reported_dna181_residues": 75258
   },
   "same_condition_baselines": {
     "fixed_logistic_C": 1.0,

@@ -4,23 +4,36 @@ RIMBind predicts protein DNA and protein RNA binding residues by combining a que
 
 ## Release status
 
-This repository is the audited public-release candidate for the manuscript. It contains the frozen model definition, the label-free inference pipeline used for the main predicted-monomer evaluation, protocol locks, checkpoint checksums, and an inference guide. The approximately 240 MB task-specific checkpoint bundle and derived training-memory labels are intended for Zenodo rather than Git. The Zenodo DOI placeholder must be replaced before manuscript submission.
+This directory is the audited public-release candidate for the manuscript. It has not yet been pushed to the public GitHub repository or archived in Zenodo. It contains the frozen model definition, the label-free inference pipeline used for the main predicted-monomer evaluation, protocol locks, checkpoint checksums, a denominator-level processed-data manifest and inference documentation. The task-specific checkpoint bundle and derived training-memory labels are intended for Zenodo rather than Git. All DOI placeholders must be replaced before submission.
 
 ## Audited implementation facts
 
-- The final query-intrinsic model is the SaProt plus C-alpha geometry plus frozen ESM3 configuration recorded as variant C in the internal checkpoint metadata.
+- The final query-intrinsic model combines SaProt sequence-structure embeddings, a C-alpha geometric branch and frozen structure-aware ESM3 embeddings.
 - Five fold outputs are converted to probabilities with `sigmoid` and then averaged. BayesRIM converts the mean probability back to a clipped logit before adding the remote residual.
 - The ESM3 branch receives query sequence, structure tokens and protein coordinates. The audited call uses `ESMProtein.from_pdb()` with its default `with_annotations=False`; SS8, SASA, function and residue-annotation tracks are absent and are replaced by ESM3 default padding tokens. No database-derived function or binding annotations are supplied.
 - The main historical evaluation uses ColabFold or AlphaFold2 predicted monomer structures. The temporal cohort uses protein chains extracted from experimental complexes after removing binding partners and is therefore a separately specified sensitivity cohort.
 
+## Two reproduction entry points
+
+### Quick inference
+
+The intended input-output contract is `protein sequence + protein-only structure -> residue probability table`. The exact computation order is documented in `INFERENCE.md`. A portable launcher and a checksum-validated minimal example remain release gates and must not be claimed as complete until they pass on a clean machine.
+
+### Paper reproduction
+
+The frozen historical-test denominators are recorded in `data_manifests/`. Analysis reproduction should start from released frozen predictions/intermediate tables and regenerate the paired effects, bootstrap intervals, randomization summaries and figure-ready tables. Full retraining of SaProt or ESM3 is not required for statistical reproduction. Figure/statistics launchers remain a release gate until added and validated.
+
 ## Repository map
 
 - `src/rimbind/model_single.py`: frozen SSCP model definition.
-- `reproducibility/frozen_pipeline/`: source snapshot used by the audited 0916 main evaluation. The shell script retains its original server paths as provenance and is not a portable launcher.
+- `reproducibility/frozen_pipeline/`: source snapshot used by the audited main evaluation, with machine-specific paths replaced by explicit arguments or environment variables.
 - `configs/`: main protocol and version lock.
 - `checkpoints/manifest.json`: checkpoint, memory and external encoder checksums.
+- `data_manifests/`: frozen historical-test sample manifest, denominator summary and checksums.
 - `INFERENCE.md`: required inputs, environment and inference order.
 - `CODE_AND_DATA_AVAILABILITY.md`: manuscript-ready availability statement.
+- `THIRD_PARTY_ASSETS.md`: redistribution and license decision matrix.
+- `SUBMISSION_STATEMENTS_TEMPLATE.md`: publication statements with author-supplied fields clearly marked.
 - `docs/ESM3_TRACK_AUDIT_20261004.md`: code-level audit of optional ESM3 tracks.
 - `docs/RELEASE_CHECKLIST.md`: remaining publication steps.
 

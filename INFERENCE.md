@@ -2,7 +2,7 @@
 
 ## Scope
 
-The audited pipeline has four stages: predicted-monomer input assembly, frozen SaProt and ESM3 embedding generation, five-fold SSCP inference, and Foldseek-based remote-memory projection followed by BayesRIM fusion. The files in `reproducibility/frozen_pipeline` are the exact provenance snapshot; they enforce hashes and the original directory contract. They are supplied for traceability, not as a one-command portable installer.
+The audited pipeline has four stages: predicted-monomer input assembly, frozen SaProt and ESM3 embedding generation, five-fold SSCP inference, and Foldseek-based remote-memory projection followed by BayesRIM fusion. The files in `reproducibility/frozen_pipeline` preserve the audited computation while replacing machine-specific model and data paths with explicit arguments or environment variables. They remain a release candidate, not yet a validated one-command installer.
 
 ## Required software
 
@@ -53,10 +53,10 @@ After recreating the original directory contract and placing the Zenodo assets a
 
 ```bash
 python reproducibility/frozen_pipeline/build_3di.py --root /path/to/run_root
-python reproducibility/frozen_pipeline/generate_embeddings.py --root /path/to/run_root --kind saprot --device cuda:0 --scope full --domain dna
+python reproducibility/frozen_pipeline/generate_embeddings.py --root /path/to/run_root --kind saprot --saprot-model /path/to/SaProt_650M_AF2 --device cuda:0 --scope full --domain dna
 python reproducibility/frozen_pipeline/generate_embeddings.py --root /path/to/run_root --kind esm3 --device cuda:0 --scope full --domain dna
 python reproducibility/frozen_pipeline/run_c0_prediction.py --root /path/to/run_root --domain dna --device cuda:0 --scope full
-python reproducibility/frozen_pipeline/run_v1_memory_prediction.py --root /path/to/run_root --domain dna --scope full
+python reproducibility/frozen_pipeline/run_v1_memory_prediction.py --root /path/to/run_root --memory-pdb-root /path/to/training_memory_pdb --domain dna --scope full
 ```
 
 Repeat the four domain-specific commands with `--domain rna`. A portable launcher that removes original server paths is listed as a release-blocking item in `docs/RELEASE_CHECKLIST.md`; until it is validated, do not describe this repository as a one-command package.
