@@ -2,7 +2,7 @@
 
 ## Do not upload until
 
-- all authors approve the source-code license;
+- the source archive contains the approved Apache-2.0 `LICENSE` and `NOTICE`;
 - all authors approve the task-specific checkpoint license;
 - redistribution of derived training-memory labels is confirmed, or those files are replaced by permitted regeneration instructions;
 - the GitHub `v1.0.0` tag and release commit are final;

@@ -43,6 +43,10 @@ The frozen historical-test denominators are recorded in `data_manifests/`. Analy
 
 SaProt and ESM3 foundation-model weights are not redistributed here. Obtain them from their official sources under their original licenses and verify the hashes in `checkpoints/manifest.json`. RCSB PDB entries remain available from RCSB. Predicted monomers can be regenerated from the released sequence manifests and frozen ColabFold protocol when those manifests are deposited.
 
+## License
+
+RIMBind source code is licensed under the Apache License, Version 2.0; see `LICENSE` and `NOTICE`. This license does not relicense third-party software, foundation-model weights, benchmark data or derived training-memory assets. The redistribution terms for the separate task-specific checkpoint archive will be stated with the final Zenodo record.
+
 ## Citation
 
 The manuscript citation and Zenodo DOI will be added when the public archive is released.

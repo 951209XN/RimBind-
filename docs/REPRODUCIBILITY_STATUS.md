@@ -11,6 +11,7 @@
 - All Python files in the release candidate passed syntax compilation, and the probability-mean-then-logit arithmetic was checked with a deterministic numerical example.
 - The `6jhe_A` core-inference fixture ran all five checkpoints and BayesRIM on GPU and reproduced the frozen 53-residue CSV byte-for-byte (`729099fb...ddf16`).
 - A new checkout retrieved from the public GitHub repository independently passed the same core smoke test on the audited server.
+- The RIMBind source repository is licensed under Apache-2.0; checkpoint and derived-memory redistribution terms remain separate release decisions.
 
 ## Partially verified
 
@@ -25,6 +26,6 @@
 - Clean-machine end-to-end execution.
 - Public GitHub release tag.
 - Zenodo archive and DOI.
-- Author-approved source-code and checkpoint licenses.
+- Author-approved checkpoint and derived-memory redistribution terms.
 
 These incomplete items are release-engineering tasks. They do not change the frozen scientific results, but the repository must not be described as fully reproducible until they are closed.

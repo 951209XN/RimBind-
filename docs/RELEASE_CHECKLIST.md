@@ -12,10 +12,10 @@
 - Supplementary Table S14 was separated into frozen endpoints and count-matched randomization sensitivity, with the real-minus-null estimand explicitly distinguished from RIMBind-versus-SSCP utility.
 - Minimal 53-residue label-free core-inference fixture added; five-fold SSCP plus BayesRIM output matched the frozen expected CSV byte-for-byte.
 - Fresh public-repository checkout passed the core GPU smoke test; limitations are recorded in `docs/CORE_SMOKE_TEST_20261005.md`.
+- Apache License 2.0 selected for RIMBind source code; top-level `LICENSE` and `NOTICE` added.
 
 ## Required before manuscript submission
 
-- Select and add an explicit repository license.
 - Obtain author confirmation for the task-specific checkpoint license and complete the third-party license matrix.
 - Validate a portable launcher that replaces the original server absolute paths.
 - Validate the full FASTA/PDB-to-prediction launcher; the completed core smoke test does not cover foundation-model embedding generation or Foldseek retrieval.

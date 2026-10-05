@@ -33,7 +33,7 @@ Do not create the final tag until the repository license, checkpoint redistribut
 ## Finalization fields
 
 - Final release commit: `TO_BE_INSERTED`
-- Source-code license: `AUTHOR_DECISION_REQUIRED`
+- Source-code license: `Apache-2.0`
 - Checkpoint license: `AUTHOR_DECISION_REQUIRED`
 - Zenodo DOI: `TO_BE_INSERTED`
 - Manuscript citation: `TO_BE_INSERTED`
