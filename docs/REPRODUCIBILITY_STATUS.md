@@ -10,6 +10,7 @@
 - The checkpoint archive was extracted independently on 2026-10-05 and all 12 task-specific files passed SHA256 verification; archive SHA256 is `93c7d2c063b8ee0f6f3829f074e7b2255f5a83197669376faca3c4ea4b323570`.
 - All Python files in the release candidate passed syntax compilation, and the probability-mean-then-logit arithmetic was checked with a deterministic numerical example.
 - The `6jhe_A` core-inference fixture ran all five checkpoints and BayesRIM on GPU and reproduced the frozen 53-residue CSV byte-for-byte (`729099fb...ddf16`).
+- A new checkout retrieved from the public GitHub repository independently passed the same core smoke test on the audited server.
 
 ## Partially verified
 

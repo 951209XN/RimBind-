@@ -11,6 +11,7 @@
 - Historical external-test processed-data manifest generated from frozen labels and predictions; denominators and fallback counts verified.
 - Supplementary Table S14 was separated into frozen endpoints and count-matched randomization sensitivity, with the real-minus-null estimand explicitly distinguished from RIMBind-versus-SSCP utility.
 - Minimal 53-residue label-free core-inference fixture added; five-fold SSCP plus BayesRIM output matched the frozen expected CSV byte-for-byte.
+- Fresh public-repository checkout passed the core GPU smoke test; limitations are recorded in `docs/CORE_SMOKE_TEST_20261005.md`.
 
 ## Required before manuscript submission
 
