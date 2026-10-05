@@ -1,0 +1,26 @@
+{
+  "schema": "rimbind_public_checkpoint_manifest_v1",
+  "generated_on": "2026-10-04",
+  "aggregation": "sigmoid each fold logit, then arithmetic mean of five probability vectors",
+  "sscp_checkpoints": [
+    {"domain": "dna", "fold": 0, "archive_path": "checkpoints/dna/fold0/best.pt", "bytes": 23932577, "sha256": "b34379222f1da915df5d31b08495955bd5261cb19477261e42e2b38eb138999f"},
+    {"domain": "dna", "fold": 1, "archive_path": "checkpoints/dna/fold1/best.pt", "bytes": 23932577, "sha256": "01919de692375d95e53beda4f0d45922457d8b77643b9640dfd488b30ef0417b"},
+    {"domain": "dna", "fold": 2, "archive_path": "checkpoints/dna/fold2/best.pt", "bytes": 23932577, "sha256": "46bea31ebe6b3ba684c45ae909b74c990c43082d80e0a595ba9a57bc217e67d2"},
+    {"domain": "dna", "fold": 3, "archive_path": "checkpoints/dna/fold3/best.pt", "bytes": 23932577, "sha256": "43f722ff1fedbecdaaa072d4b0fa6d9d85c7b5a1506e9ae3c41ec7043c806197"},
+    {"domain": "dna", "fold": 4, "archive_path": "checkpoints/dna/fold4/best.pt", "bytes": 23932577, "sha256": "4ddf29fb8cf7070c19c6a39adfc222bcae4905422c90dafac8b26273b38ea98f"},
+    {"domain": "rna", "fold": 0, "archive_path": "checkpoints/rna/fold0/best.pt", "bytes": 23932577, "sha256": "6fd29d2eae624588bfb78e34224cbeb88af1bf595c4448fbd988bda72dfab48b"},
+    {"domain": "rna", "fold": 1, "archive_path": "checkpoints/rna/fold1/best.pt", "bytes": 23932577, "sha256": "ad4e11844240fae9fcdcb73cd081751a1dc61270407f43e4b680f0b14c0e55d4"},
+    {"domain": "rna", "fold": 2, "archive_path": "checkpoints/rna/fold2/best.pt", "bytes": 23932577, "sha256": "18055a2416824e0ca832607e7a92ee60fe11bea3245857cd96307b7b9eed30fe"},
+    {"domain": "rna", "fold": 3, "archive_path": "checkpoints/rna/fold3/best.pt", "bytes": 23932577, "sha256": "03c7914ddc44bed6097d220e124a1ab54c69b58ab556f1219f38175997877185"},
+    {"domain": "rna", "fold": 4, "archive_path": "checkpoints/rna/fold4/best.pt", "bytes": 23932577, "sha256": "beb695c7db7c88cff1dd02c2f246a4ee339425aae90ac5513e011f4a170f237b"}
+  ],
+  "training_memory": [
+    {"domain": "dna", "archive_path": "training_memory/dna.pt", "bytes": 518850, "sha256": "c063d050d27d4c394b1cd8a2715846fdf565b72cc5ec44e271422b30ee95a3ba"},
+    {"domain": "rna", "archive_path": "training_memory/rna.pt", "bytes": 445484, "sha256": "d4875c9a480dd779912a25cca94596707adeba3810909e1b3d74d484d62662ba"}
+  ],
+  "external_assets": {
+    "saprot": {"model": "SaProt_650M_AF2", "weight_sha256": "513c39088804b74309d961174d5fc7aeabfb9b79d2814cdc7e465d4fe4b9f216", "redistributed": false},
+    "esm3": {"model": "esm3_sm_open_v1", "snapshot_revision": "47f0545b2b6daf26a93439a3cd610f4f7f3d5478", "weight_sha256": "5ead5a135c658068db6a4f1b933e72d6110992c4668822e1c0e2dcc53e38acd9", "redistributed": false},
+    "foldseek": {"binary_sha256": "4464e56b8b1c104f1d595f1ea3529c9793c09d7d199556c322c863779a8a2df0", "redistributed": false}
+  }
+}

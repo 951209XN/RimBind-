@@ -1,0 +1,43 @@
+{
+  "schema": "0916_rimbind_decisive_mvp_v1",
+  "created_date": "2026-09-16",
+  "workspace": "/home/ys/xuning/MyProject",
+  "datasets": {
+    "DNA-129_Test": {"domain": "dna", "expected_proteins": 129, "raw_manifest": "rawdata/DNA/DNA-129_Test.txt"},
+    "DNA-181_Test": {"domain": "dna", "expected_proteins": 181, "raw_manifest": "rawdata/DNA/DNA-181_Test.txt"},
+    "RNA-117_Test": {"domain": "rna", "expected_proteins": 117, "raw_manifest": "rawdata/RNA/RNA-117_Test.txt"}
+  },
+  "existing_projects": {
+    "development": "0814-BayesianRemoteInterfaceMemory",
+    "external": "0814-BayesRIM-FrozenExternalConfirmation",
+    "temporal_pipeline": "0824-BayesRIM-TemporalConfirmation-Frozen-V1",
+    "rna_prospective": "0903-RIMBind-RNA-Prospective-CR-Confirmation"
+  },
+  "colabfold": {
+    "binary": "/home/ys/xuning/MyProject/localcolabfold/localcolabfold/colabfold-conda/bin/colabfold_batch",
+    "data": "/home/ys/xuning/MyProject/localcolabfold/localcolabfold/colabfold",
+    "model_type": "alphafold2_ptm",
+    "msa_mode": "mmseqs2_uniref_env",
+    "num_models": 1,
+    "num_recycle": 3,
+    "num_seeds": 1,
+    "use_templates": false,
+    "relax": false
+  },
+  "predicted_monomer": {
+    "max_residues": 1022,
+    "exclusion_rule": "Exclude sequences longer than 1022 residues before structure prediction; report counts by dataset and do not replace them post hoc."
+  },
+  "same_condition_baselines": {
+    "fixed_logistic_C": 1.0,
+    "features": ["sscp_logit", "template_logit", "best_tm", "log1p_template_count", "covered"],
+    "external_selection_forbidden": true
+  },
+  "rna_gate": {
+    "next_permitted_blinded_count_date": "2026-09-30",
+    "stage2_trigger": 180,
+    "final_trigger": 334,
+    "performance_before_trigger_forbidden": true
+  },
+  "bootstrap": {"replicates": 10000, "seed": 20260916}
+}
