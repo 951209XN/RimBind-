@@ -9,6 +9,7 @@
 - Task-specific checkpoint and training-memory file hashes: recorded in `checkpoints/`.
 - The checkpoint archive was extracted independently on 2026-10-05 and all 12 task-specific files passed SHA256 verification; archive SHA256 is `93c7d2c063b8ee0f6f3829f074e7b2255f5a83197669376faca3c4ea4b323570`.
 - All Python files in the release candidate passed syntax compilation, and the probability-mean-then-logit arithmetic was checked with a deterministic numerical example.
+- The `6jhe_A` core-inference fixture ran all five checkpoints and BayesRIM on GPU and reproduced the frozen 53-residue CSV byte-for-byte (`729099fb...ddf16`).
 
 ## Partially verified
 
@@ -18,7 +19,7 @@
 ## Not yet complete
 
 - Portable one-command inference launcher.
-- Minimal sequence/PDB example with expected probability-file checksum.
+- Full sequence/PDB-to-prediction launcher test. The reference FASTA/PDB and core-inference smoke test are complete, but the smoke fixture starts from frozen embeddings and remote evidence.
 - Frozen-prediction-to-table/figure launchers.
 - Clean-machine end-to-end execution.
 - Public GitHub release tag.

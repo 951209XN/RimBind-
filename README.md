@@ -17,7 +17,7 @@ This repository contains the audited public-release candidate for the manuscript
 
 ### Quick inference
 
-The intended input-output contract is `protein sequence + protein-only structure -> residue probability table`. The exact computation order is documented in `INFERENCE.md`. A portable launcher and a checksum-validated minimal example remain release gates and must not be claimed as complete until they pass on a clean machine.
+The intended input-output contract is `protein sequence + protein-only structure -> residue probability table`. The exact computation order is documented in `INFERENCE.md`. A checksum-validated 53-residue core-inference example is provided in `examples/`; it validates the five-fold SSCP and BayesRIM stages using frozen label-free embeddings and remote evidence. A portable launcher for the complete FASTA/PDB preprocessing chain remains a release gate.
 
 ### Paper reproduction
 
@@ -30,6 +30,8 @@ The frozen historical-test denominators are recorded in `data_manifests/`. Analy
 - `configs/`: main protocol and version lock.
 - `checkpoints/manifest.json`: checkpoint, memory and external encoder checksums.
 - `data_manifests/`: frozen historical-test sample manifest, denominator summary and checksums.
+- `examples/`: sequence/PDB reference, label-free core fixture, expected output and byte-level smoke test.
+- `environment/`: environment specifications for release validation.
 - `INFERENCE.md`: required inputs, environment and inference order.
 - `CODE_AND_DATA_AVAILABILITY.md`: manuscript-ready availability statement.
 - `THIRD_PARTY_ASSETS.md`: redistribution and license decision matrix.

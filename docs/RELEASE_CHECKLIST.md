@@ -10,13 +10,14 @@
 - Source snapshot, protocol lock, inference guide and manuscript availability text assembled.
 - Historical external-test processed-data manifest generated from frozen labels and predictions; denominators and fallback counts verified.
 - Supplementary Table S14 was separated into frozen endpoints and count-matched randomization sensitivity, with the real-minus-null estimand explicitly distinguished from RIMBind-versus-SSCP utility.
+- Minimal 53-residue label-free core-inference fixture added; five-fold SSCP plus BayesRIM output matched the frozen expected CSV byte-for-byte.
 
 ## Required before manuscript submission
 
 - Select and add an explicit repository license.
 - Obtain author confirmation for the task-specific checkpoint license and complete the third-party license matrix.
 - Validate a portable launcher that replaces the original server absolute paths.
-- Add a minimal example input and expected output checksum.
+- Validate the full FASTA/PDB-to-prediction launcher; the completed core smoke test does not cover foundation-model embedding generation or Foldseek retrieval.
 - Add and validate figure/statistics reproduction launchers against the frozen result tables.
 - Upload the checkpoint and training-memory archive to Zenodo.
 - Mint the Zenodo DOI and replace every placeholder in the manuscript and repository.
