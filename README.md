@@ -4,7 +4,7 @@ RIMBind predicts protein DNA and protein RNA binding residues by combining a que
 
 ## Release status
 
-This directory is the audited public-release candidate for the manuscript. It has not yet been pushed to the public GitHub repository or archived in Zenodo. It contains the frozen model definition, the label-free inference pipeline used for the main predicted-monomer evaluation, protocol locks, checkpoint checksums, a denominator-level processed-data manifest and inference documentation. The task-specific checkpoint bundle and derived training-memory labels are intended for Zenodo rather than Git. All DOI placeholders must be replaced before submission.
+This repository contains the audited public-release candidate for the manuscript. The source and reproducibility materials are now available on GitHub; the task-specific checkpoint archive has not yet been deposited in Zenodo. The repository contains the frozen model definition, the label-free inference pipeline used for the main predicted-monomer evaluation, protocol locks, checkpoint checksums, a denominator-level processed-data manifest and inference documentation. The task-specific checkpoint bundle and derived training-memory labels are intended for Zenodo rather than Git. All DOI placeholders must be replaced before submission.
 
 ## Audited implementation facts
 
